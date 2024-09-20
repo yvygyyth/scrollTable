@@ -1,0 +1,49 @@
+.custom-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    color: #FFFFFF;
+    .table-container {
+        display: block;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none; /* 隐藏滚动条 */
+        }
+        .table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            position: relative;
+            font-family: 思源黑体 CN, 思源黑体 CN;
+            font-size: vw(14);
+            &-head {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+                font-weight: 500;
+                background: linear-gradient( 180deg, #3052A4 0%, #1F315C 100%), linear-gradient( 180deg, #0D28A9 0%, #071957 100%);
+                th {
+                    text-align: center;
+                    padding: vw(16) 0;
+                }
+            }
+
+            &-body {
+                background-color: rgba(3, 23, 74, 1);
+                backdrop-filter: blur(2px);
+                color: #8EA6F1;
+                td {
+                    padding: vw(16) vw(6);
+                    border-top: vw(1) solid #084281;
+                }
+            }
+
+            .bolb {
+                font-weight: bold;
+            }
+        }
+    }
+}
