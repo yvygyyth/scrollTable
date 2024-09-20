@@ -31,13 +31,15 @@ const renderCell = (row, column) => {
         }
         return rowData[dataIndex];
     };
-    
+
     const value = getDataFromIndex(column.dataIndex, row);
-    
+    console.log('value',value)
     if (column.customRender) {
+        console.log('column.dataIndex',column.dataIndex,row)
+        console.log('column.customRender',column.customRender(value, row))
         return column.customRender(value, row);
     }
-
+    
     return value;
 };
 

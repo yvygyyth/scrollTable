@@ -32,7 +32,7 @@ const getData = () =>{
             path:'recycle/order/list',
             params
         },
-        10 * 60 * 1000,
+        60 * 1000,
         (res)=>{
             listData.value = res.data.map((item,index)=>{
                 return{

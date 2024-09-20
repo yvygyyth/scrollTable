@@ -55,11 +55,11 @@ const tableColumns = [
             return h('div',{ style: { color: orderStatus[value].color } }, orderStatus[value].name)
         }
     },
-    // { title: '溯源码', dataIndex: 'xdata' , align:'center', 
-    //     customRender(value, row){
-    //         return h(QrcodeOutlined,{ style: { color: '#8EA6F1',fontSize:'1rem'} })
-    //     }
-    // },
+    { title: '溯源码', dataIndex: 'id' , align:'center', 
+        customRender(value, row){
+            return h(QrcodeOutlined,{ style: { color: '#8EA6F1',fontSize:'1rem'} })
+        }
+    },
 ];
 
 export const basicProps = {
