@@ -54,7 +54,6 @@ import TableCell from './cell.vue'
         onLeave: ()=>animation.start()
     });
     
-    
    
     onMounted(()=>{
         

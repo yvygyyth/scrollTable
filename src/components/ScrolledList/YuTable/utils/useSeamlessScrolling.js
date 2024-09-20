@@ -35,16 +35,18 @@ export const useSeamlessScrolling = (el,entireListRef,props) => {
                     console.log('cacheListData',unref(cacheListData),'\nshowList',unref(showList))
                 }
             }
-            
         };
     }
 
     const animation = new AnimationLoop(animationCallBack());    
-
+    const isMounted = ref(false);
+    const dataLoaded = ref(false);
     watch(
         ()=>props.dataSource,
         (newValue)=>{
             showList.value = newValue.slice(0, 10)
+            dataLoaded.value = true
+            isMounted.value && animation.start();
         },
         {
             once:true
@@ -70,10 +72,11 @@ export const useSeamlessScrolling = (el,entireListRef,props) => {
             },0)   
         }
     )
-
-    onMounted(() => {
-        animation.start();
-    });
+    
+    onMounted(()=>{
+        isMounted.value = true
+        dataLoaded.value && animation.start();
+    })
 
     onUnmounted(()=>{
         animation.clear();

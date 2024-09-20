@@ -31,7 +31,7 @@ const renderCell = (row, column) => {
         }
         return rowData[dataIndex];
     };
-
+    
     const value = getDataFromIndex(column.dataIndex, row);
     
     if (column.customRender) {
